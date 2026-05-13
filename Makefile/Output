@@ -1,0 +1,359 @@
+/* make run_test1
+   make view_wave
+*/
+
+# output
+
+...
+ ***********       IMPORTANT RELEASE NOTES         ************
+#
+#   You are using a version of the UVM library that has been compiled
+#   with `UVM_NO_DEPRECATED undefined.
+#   See http://www.eda.org/svdb/view.php?id=3313 for more details.
+#
+#   You are using a version of the UVM library that has been compiled
+#   with `UVM_OBJECT_MUST_HAVE_CONSTRUCTOR undefined.
+#   See http://www.eda.org/svdb/view.php?id=3770 for more details.
+#
+#       (Specify +UVM_NO_RELNOTES to turn off this notice)
+#
+# UVM_INFO verilog_src/questa_uvm_pkg-1.2/src/questa_uvm_pkg.sv(277) @ 0: reporter [Questa UVM] QUESTA_UVM-1.2.3
+# UVM_INFO verilog_src/questa_uvm_pkg-1.2/src/questa_uvm_pkg.sv(278) @ 0: reporter [Questa UVM]  questa_uvm::init(+struct)
+# UVM_INFO @ 0: reporter [RNTST] Running test spi_miso_test...
+# UVM_INFO @ 0: reporter [UVMTOP] UVM testbench topology:
+# --------------------------------------------------------------------
+# Name                         Type                        Size  Value
+# --------------------------------------------------------------------
+# uvm_test_top                 spi_miso_test               -     @480
+#   envh                       apb_spi_tb                  -     @496
+#     apb_agt                  apb_agt_top                 -     @527
+#       agt[0]                 apb_agt                     -     @546
+#         drvh                 apb_driver                  -     @574
+#           rsp_port           uvm_analysis_port           -     @589
+#           seq_item_port      uvm_seq_item_pull_port      -     @581
+#         monh                 apb_monitor                 -     @555
+#           ap                 uvm_analysis_port           -     @562
+#         seqrh                apb_sequencer               -     @597
+#           rsp_export         uvm_analysis_export         -     @604
+#           seq_item_export    uvm_seq_item_pull_imp       -     @698
+#           arbitration_queue  array                       0     -
+#           lock_queue         array                       0     -
+#           num_last_reqs      integral                    32    'd1
+#           num_last_rsps      integral                    32    'd1
+#     sb                       apb_spi_sb                  -     @534
+#       fifo_apb[0]            uvm_tlm_analysis_fifo #(T)  -     @714
+#         analysis_export      uvm_analysis_imp            -     @753
+#         get_ap               uvm_analysis_port           -     @745
+#         get_peek_export      uvm_get_peek_imp            -     @729
+#         put_ap               uvm_analysis_port           -     @737
+#         put_export           uvm_put_imp                 -     @721
+#       fifo_spi[0]            uvm_tlm_analysis_fifo #(T)  -     @761
+#         analysis_export      uvm_analysis_imp            -     @800
+#         get_ap               uvm_analysis_port           -     @792
+#         get_peek_export      uvm_get_peek_imp            -     @776
+#         put_ap               uvm_analysis_port           -     @784
+#         put_export           uvm_put_imp                 -     @768
+#     spi_agt                  spi_agt_top                 -     @520
+#       agt[0]                 spi_agt                     -     @813
+#         drvh                 spi_driver                  -     @841
+#           rsp_port           uvm_analysis_port           -     @856
+#           seq_item_port      uvm_seq_item_pull_port      -     @848
+#         monh                 spi_monitor                 -     @822
+#           ap                 uvm_analysis_port           -     @829
+#         seqrh                spi_sequencer               -     @864
+#           rsp_export         uvm_analysis_export         -     @871
+#           seq_item_export    uvm_seq_item_pull_imp       -     @965
+#           arbitration_queue  array                       0     -
+#           lock_queue         array                       0     -
+#           num_last_reqs      integral                    32    'd1
+#           num_last_rsps      integral                    32    'd1
+# --------------------------------------------------------------------
+#
+# UVM_INFO ../apb_agt_top/apb_driver.sv(60) @ 75: uvm_test_top.envh.apb_agt.agt[0].drvh [apb_driver] -----------------------------------------------------------------------------------------
+# Name                           Type       Size  Value
+# -----------------------------------------------------------------------------------------
+# req                            apb_trans  -     @987
+#   begin_time                   time       64    35
+#   depth                        int        32    'd2
+#   parent sequence (name)       string     2     w1
+#   parent sequence (full name)  string     41    uvm_test_top.envh.apb_agt.agt[0].seqrh.w1
+#   sequencer                    string     38    uvm_test_top.envh.apb_agt.agt[0].seqrh
+#   PRESET_n                     integral   1     'b1
+#   PWRITE_i                     integral   1     'b0
+#   PSEL_i                       integral   1     'b0
+#   PENABLE_i                    integral   1     'b0
+#   PADDR_i                      integral   3     'b101
+#   PWDATA_i                     integral   8     'b1101111
+#   PRDATA_o                     integral   8     'b0
+#   PSLVERR_o                    integral   1     'b0
+#   PREADY_o                     integral   1     'b0
+# -----------------------------------------------------------------------------------------
+#
+# UVM_INFO ../apb_agt_top/apb_driver.sv(60) @ 125: uvm_test_top.envh.apb_agt.agt[0].drvh [apb_driver] -----------------------------------------------------------------------------------------
+# Name                           Type       Size  Value
+# -----------------------------------------------------------------------------------------
+# req                            apb_trans  -     @987
+#   begin_time                   time       64    85
+#   end_time                     time       64    85
+#   depth                        int        32    'd2
+#   parent sequence (name)       string     2     w1
+#   parent sequence (full name)  string     41    uvm_test_top.envh.apb_agt.agt[0].seqrh.w1
+#   sequencer                    string     38    uvm_test_top.envh.apb_agt.agt[0].seqrh
+#   PRESET_n                     integral   1     'b1
+#   PWRITE_i                     integral   1     'b1
+#   PSEL_i                       integral   1     'b0
+#   PENABLE_i                    integral   1     'b0
+#   PADDR_i                      integral   3     'b0
+#   PWDATA_i                     integral   8     'b11111111
+#   PRDATA_o                     integral   8     'b0
+#   PSLVERR_o                    integral   1     'b0
+#   PREADY_o                     integral   1     'b0
+# -----------------------------------------------------------------------------------------
+#
+# UVM_INFO ../apb_agt_top/apb_driver.sv(60) @ 175: uvm_test_top.envh.apb_agt.agt[0].drvh [apb_driver] -----------------------------------------------------------------------------------------
+# Name                           Type       Size  Value
+# -----------------------------------------------------------------------------------------
+# req                            apb_trans  -     @987
+#   begin_time                   time       64    135
+#   end_time                     time       64    135
+#   depth                        int        32    'd2
+#   parent sequence (name)       string     2     w1
+#   parent sequence (full name)  string     41    uvm_test_top.envh.apb_agt.agt[0].seqrh.w1
+#   sequencer                    string     38    uvm_test_top.envh.apb_agt.agt[0].seqrh
+#   PRESET_n                     integral   1     'b1
+#   PWRITE_i                     integral   1     'b1
+#   PSEL_i                       integral   1     'b0
+#   PENABLE_i                    integral   1     'b0
+#   PADDR_i                      integral   3     'b1
+#   PWDATA_i                     integral   8     'b11000
+#   PRDATA_o                     integral   8     'b0
+#   PSLVERR_o                    integral   1     'b0
+#   PREADY_o                     integral   1     'b0
+# -----------------------------------------------------------------------------------------
+#
+# UVM_INFO ../apb_agt_top/apb_driver.sv(60) @ 225: uvm_test_top.envh.apb_agt.agt[0].drvh [apb_driver] -----------------------------------------------------------------------------------------
+# Name                           Type       Size  Value
+# -----------------------------------------------------------------------------------------
+# req                            apb_trans  -     @987
+#   begin_time                   time       64    185
+#   end_time                     time       64    185
+#   depth                        int        32    'd2
+#   parent sequence (name)       string     2     w1
+#   parent sequence (full name)  string     41    uvm_test_top.envh.apb_agt.agt[0].seqrh.w1
+#   sequencer                    string     38    uvm_test_top.envh.apb_agt.agt[0].seqrh
+#   PRESET_n                     integral   1     'b1
+#   PWRITE_i                     integral   1     'b1
+#   PSEL_i                       integral   1     'b0
+#   PENABLE_i                    integral   1     'b0
+#   PADDR_i                      integral   3     'b10
+#   PWDATA_i                     integral   8     'b10001
+#   PRDATA_o                     integral   8     'b0
+#   PSLVERR_o                    integral   1     'b0
+#   PREADY_o                     integral   1     'b0
+# -----------------------------------------------------------------------------------------
+#
+# UVM_INFO ../apb_agt_top/apb_driver.sv(60) @ 275: uvm_test_top.envh.apb_agt.agt[0].drvh [apb_driver] -----------------------------------------------------------------------------------------
+# Name                           Type       Size  Value
+# -----------------------------------------------------------------------------------------
+# req                            apb_trans  -     @987
+#   begin_time                   time       64    235
+#   end_time                     time       64    235
+#   depth                        int        32    'd2
+#   parent sequence (name)       string     2     w1
+#   parent sequence (full name)  string     41    uvm_test_top.envh.apb_agt.agt[0].seqrh.w1
+#   sequencer                    string     38    uvm_test_top.envh.apb_agt.agt[0].seqrh
+#   PRESET_n                     integral   1     'b1
+#   PWRITE_i                     integral   1     'b1
+#   PSEL_i                       integral   1     'b0
+#   PENABLE_i                    integral   1     'b0
+#   PADDR_i                      integral   3     'b101
+#   PWDATA_i                     integral   8     'b11001000
+#   PRDATA_o                     integral   8     'b0
+#   PSLVERR_o                    integral   1     'b0
+#   PREADY_o                     integral   1     'b0
+# -----------------------------------------------------------------------------------------
+#
+# UVM_INFO ../spi_agt_top/spi_driver.sv(119) @ 905: uvm_test_top.envh.spi_agt.agt[0].drvh [spi_driver] -----------------------------------------------------------------------------------------
+# Name                           Type       Size  Value
+# -----------------------------------------------------------------------------------------
+# req                            spi_trans  -     @1041
+#   begin_time                   time       64    285
+#   depth                        int        32    'd2
+#   parent sequence (name)       string     2     m1
+#   parent sequence (full name)  string     41    uvm_test_top.envh.spi_agt.agt[0].seqrh.m1
+#   sequencer                    string     38    uvm_test_top.envh.spi_agt.agt[0].seqrh
+#   ss_o                         integral   1     'b0
+#   mosi_o                       integral   8     'b0
+#   miso_i                       integral   8     'b10011001
+# -----------------------------------------------------------------------------------------
+#
+# UVM_INFO ../spi_agt_top/spi_monitor.sv(89) @ 945: uvm_test_top.envh.spi_agt.agt[0].monh [SPI Monitor] -------------------------------------
+# Name      Type       Size  Value
+# -------------------------------------
+# xtn       spi_trans  -     @837
+#   ss_o    integral   1     'b0
+#   mosi_o  integral   8     'b11001000
+#   miso_i  integral   8     'b10011001
+# -------------------------------------
+#
+# PWDATA MOSI data comparision successfull
+# UVM_INFO ../apb_agt_top/apb_driver.sv(60) @ 1935: uvm_test_top.envh.apb_agt.agt[0].drvh [apb_driver] -----------------------------------------------------------------------------------------
+# Name                           Type       Size  Value
+# -----------------------------------------------------------------------------------------
+# req                            apb_trans  -     @1048
+#   begin_time                   time       64    1905
+#   depth                        int        32    'd2
+#   parent sequence (name)       string     2     r1
+#   parent sequence (full name)  string     41    uvm_test_top.envh.apb_agt.agt[0].seqrh.r1
+#   sequencer                    string     38    uvm_test_top.envh.apb_agt.agt[0].seqrh
+#   PRESET_n                     integral   1     'b1
+#   PWRITE_i                     integral   1     'b0
+#   PSEL_i                       integral   1     'b0
+#   PENABLE_i                    integral   1     'b0
+#   PADDR_i                      integral   3     'b0
+#   PWDATA_i                     integral   8     'b1011011
+#   PRDATA_o                     integral   8     'b11111111
+#   PSLVERR_o                    integral   1     'b0
+#   PREADY_o                     integral   1     'b0
+# -----------------------------------------------------------------------------------------
+#
+# UVM_INFO ../apb_agt_top/apb_driver.sv(60) @ 1985: uvm_test_top.envh.apb_agt.agt[0].drvh [apb_driver] -----------------------------------------------------------------------------------------
+# Name                           Type       Size  Value
+# -----------------------------------------------------------------------------------------
+# req                            apb_trans  -     @1048
+#   begin_time                   time       64    1945
+#   end_time                     time       64    1945
+#   depth                        int        32    'd2
+#   parent sequence (name)       string     2     r1
+#   parent sequence (full name)  string     41    uvm_test_top.envh.apb_agt.agt[0].seqrh.r1
+#   sequencer                    string     38    uvm_test_top.envh.apb_agt.agt[0].seqrh
+#   PRESET_n                     integral   1     'b1
+#   PWRITE_i                     integral   1     'b0
+#   PSEL_i                       integral   1     'b0
+#   PENABLE_i                    integral   1     'b0
+#   PADDR_i                      integral   3     'b1
+#   PWDATA_i                     integral   8     'b1101100
+#   PRDATA_o                     integral   8     'b11000
+#   PSLVERR_o                    integral   1     'b0
+#   PREADY_o                     integral   1     'b0
+# -----------------------------------------------------------------------------------------
+#
+# UVM_INFO ../apb_agt_top/apb_driver.sv(60) @ 2035: uvm_test_top.envh.apb_agt.agt[0].drvh [apb_driver] -----------------------------------------------------------------------------------------
+# Name                           Type       Size  Value
+# -----------------------------------------------------------------------------------------
+# req                            apb_trans  -     @1048
+#   begin_time                   time       64    1995
+#   end_time                     time       64    1995
+#   depth                        int        32    'd2
+#   parent sequence (name)       string     2     r1
+#   parent sequence (full name)  string     41    uvm_test_top.envh.apb_agt.agt[0].seqrh.r1
+#   sequencer                    string     38    uvm_test_top.envh.apb_agt.agt[0].seqrh
+#   PRESET_n                     integral   1     'b1
+#   PWRITE_i                     integral   1     'b0
+#   PSEL_i                       integral   1     'b0
+#   PENABLE_i                    integral   1     'b0
+#   PADDR_i                      integral   3     'b10
+#   PWDATA_i                     integral   8     'b10000000
+#   PRDATA_o                     integral   8     'b10001
+#   PSLVERR_o                    integral   1     'b0
+#   PREADY_o                     integral   1     'b0
+# -----------------------------------------------------------------------------------------
+#
+# UVM_INFO ../apb_agt_top/apb_driver.sv(60) @ 2085: uvm_test_top.envh.apb_agt.agt[0].drvh [apb_driver] -----------------------------------------------------------------------------------------
+# Name                           Type       Size  Value
+# -----------------------------------------------------------------------------------------
+# req                            apb_trans  -     @1048
+#   begin_time                   time       64    2045
+#   end_time                     time       64    2045
+#   depth                        int        32    'd2
+#   parent sequence (name)       string     2     r1
+#   parent sequence (full name)  string     41    uvm_test_top.envh.apb_agt.agt[0].seqrh.r1
+#   sequencer                    string     38    uvm_test_top.envh.apb_agt.agt[0].seqrh
+#   PRESET_n                     integral   1     'b1
+#   PWRITE_i                     integral   1     'b0
+#   PSEL_i                       integral   1     'b0
+#   PENABLE_i                    integral   1     'b0
+#   PADDR_i                      integral   3     'b11
+#   PWDATA_i                     integral   8     'b1000100
+#   PRDATA_o                     integral   8     'b100000
+#   PSLVERR_o                    integral   1     'b0
+#   PREADY_o                     integral   1     'b0
+# -----------------------------------------------------------------------------------------
+#
+# UVM_INFO ../apb_agt_top/apb_driver.sv(60) @ 2135: uvm_test_top.envh.apb_agt.agt[0].drvh [apb_driver] -----------------------------------------------------------------------------------------
+# Name                           Type       Size  Value
+# -----------------------------------------------------------------------------------------
+# req                            apb_trans  -     @1048
+#   begin_time                   time       64    2095
+#   end_time                     time       64    2095
+#   depth                        int        32    'd2
+#   parent sequence (name)       string     2     r1
+#   parent sequence (full name)  string     41    uvm_test_top.envh.apb_agt.agt[0].seqrh.r1
+#   sequencer                    string     38    uvm_test_top.envh.apb_agt.agt[0].seqrh
+#   PRESET_n                     integral   1     'b1
+#   PWRITE_i                     integral   1     'b0
+#   PSEL_i                       integral   1     'b0
+#   PENABLE_i                    integral   1     'b0
+#   PADDR_i                      integral   3     'b101
+#   PWDATA_i                     integral   8     'b1000111
+#   PRDATA_o                     integral   8     'b10011001
+#   PSLVERR_o                    integral   1     'b0
+#   PREADY_o                     integral   1     'b0
+# -----------------------------------------------------------------------------------------
+#
+# --------------------*SCOREBOARD*-----------------------
+# PRDATA MISO data comparision successfull
+# UVM_INFO verilog_src/uvm-1.1d/src/base/uvm_objection.svh(1267) @ 2145: reporter [TEST_DONE] 'run' phase is ready to proceed to the 'extract' phase
+#
+# ----------------------------------------*SCOREBOARD*--------------------------
+# Data same : 2 | Data not same: 0
+#
+# --- UVM Report Summary ---
+#
+# ** Report counts by severity
+# UVM_INFO :   17
+# UVM_WARNING :    0
+# UVM_ERROR :    0
+# UVM_FATAL :    0
+# ** Report counts by id
+# [Questa UVM]     2
+# [RNTST]     1
+# [SPI Monitor]     1
+# [TEST_DONE]     1
+# [UVMTOP]     1
+# [apb_driver]    10
+# [spi_driver]     1
+# ** Note: $finish    : /home/cad/eda/Mentor_Graphics/Questasim/questasim/linux_x86_64/../verilog_src/uvm-1.1d/src/base/uvm_root.svh(430)
+#    Time: 2145 ns  Iteration: 64  Instance: /top
+# Saving coverage database on exit...
+# End time: 17:05:07 on May 13,2026, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 1
+vcover report  -cvg  -details -nocompactcrossbins -codeAll -assert -directive -html mem_cov2
+QuestaSim-64 vcover 2022.1_2 Coverage Utility 2022.04 Apr  2 2022
+Start time: 17:05:07 on May 13,2026
+vcover report -cvg -details -nocompactcrossbins -codeAll -assert -directive -html mem_cov2
+
+End time: 17:05:07 on May 13,2026, Elapsed time: 0:00:00
+Errors: 0, Warnings: 0
+
+
+...
+
+# commands to use to run ===>
+[DNKathyayani@mavenserver-RH3 sim]$ make help
+=============================================================================================================
+! USAGE         --  make target                                                                                 !
+! clean         =>  clean the earlier log and intermediate files.                                               !
+! sv_cmp        =>  Create library and compile the code.                                                        !
+! run_test      =>  clean, compile & run the simulation for ram_signle_adddr_test in batch mode.                !
+! run_test1     =>  clean, compile & run the simulation for ram_ten_addr_test in batch mode.                    !
+! run_test2     =>  clean, compile & run the simulation for ram_odd_addr_test in batch mode.                    !
+! run_test3     =>  clean, compile & run the simulation for ram_even_addr_test in batch mode.                   !
+! view_wave1 =>  To view the waveform of ram_signle_addr_test                                                   !
+! view_wave2 =>  To view the waveform of ram_ten_addr_test                                                      !
+! view_wave3 =>  To view the waveform of ram_odd_addr_test                                                      !
+! view_wave4 =>  To view the waveform of ram_even_addr_test                                                     !
+! regress    =>  clean, compile and run all testcases in batch mode.                                            !
+! report     =>  To merge coverage reports for all testcases and  convert to html format.                       !
+! cov        =>  To open merged coverage report in html format.                                                 !
+======================================================================================
