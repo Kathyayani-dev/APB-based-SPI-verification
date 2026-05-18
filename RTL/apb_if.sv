@@ -30,36 +30,85 @@ endinterface
 
     ...
 
-#code for spi_if.sv
+# Assertions for APB_if
 
-  ...
-  interface spi_if(input bit clock);
-	logic ss_o;
-	logic SCLK_o;
-	logic mosi_o;
-	logic miso_i;
+	...
+	property signals_stable;
+     @(posedge clock) $rose(PSEL)|-> ($stable(PWRITE) &&
+$stable(PADDR) &&
+$stable(PWDATA)) until PREADY[->1];
+   endproperty
 
-	clocking spi_drv_cb@(posedge clock);
-		default input#1 output #1;
-			input ss_o;
-			input SCLK_o;
-			input mosi_o;
-			output miso_i;
-	endclocking:spi_drv_cb
+   property penable_stable;
+     @(posedge clock) $rose(PENABLE)|->($stable(PSEL) &&
+$stable(PENABLE)) until PREADY [->1];
+   endproperty
 
+   property psel_to_pready;
+     @(posedge clock) (PSEL && PENABLE ) |->##[0:$] PREADY;
+   endproperty
 
-	clocking spi_mon_cb@(posedge clock);
-		default input #1 output #1;
-			input ss_o;
-			input SCLK_o;
-			input mosi_o;
-			input miso_i;
-	endclocking:spi_mon_cb
+   property address_reserved;
+     @(posedge clock) PSEL |-> ((PADDR!=3'b100) || (PADDR !=3'b110)||(PADDR!=3'b111));
+   endproperty
 
+   property penable_deassert;
+     @(posedge clock) (!PSEL) |-> (!PENABLE);
+   endproperty
 
-	modport SPI_DRV_MP(clocking spi_drv_cb);
-	modport SPI_MON_MP(clocking spi_mon_cb);
+   property valid_write_data_transfer;
+     @(posedge clock) (PSEL && PENABLE && PWRITE) |->(PWDATA !== 'hx);
+   endproperty
 
-endinterface
+   property valid_read_data_transfer;
+     @(posedge clock) (PSEL && PENABLE && (!PWRITE)) |-> (PRDATA !== 'hx);
+   endproperty
 
-  ...
+   property pready_low_at_start;
+     @(posedge clock) (PSEL && (!PENABLE))|-> (!PREADY);
+   endproperty
+
+   property pready_deassert;
+     @(posedge clock) (!PSEL) |-> (!PREADY);
+   endproperty
+
+   SIGNAL_STABLE : assert property(signals_stable)
+$info("signal stablity is verified");
+ else
+$error("signal stablity is not verified");
+   PENABLE_STABLE : assert property(penable_stable)
+$info("Penable is stable until Pready is high");
+ else
+$error("Penable is not stable");
+   PSEL_TO_PREADY : assert property(psel_to_pready)
+  $info("Psel&Penable to Pready is verified ");
+ else
+$error("Psel&Pneable is not verified");
+
+   ADDRESS_RESERVED : assert property(address_reserved)
+$info("reserved addresses are verified");
+ else
+$error("Reserved addresses are not verified");
+
+   PENABLE_DEASSERT : assert property(penable_deassert)
+       $info("When Psel goes low even Penable should go low is verified");
+ else
+$error("When Psel goes low even Penable should go low is verified");
+   PWDATA_TRANSFER : assert property(valid_write_data_transfer)
+       $info("Valid Write Data Transfer");
+ else
+$error("Valid write Data Transfer Failed");
+   PRDATA_TRANSFER : assert property(valid_read_data_transfer)
+$info("valid read data transfer");
+         else
+$error("valid read data transfer failed");
+   PREADY_START : assert property(pready_low_at_start)
+       $info("Pready is low at the start");
+ else
+$error("Pready is not low at the start");
+   PREADY_DEASSERT : assert property(pready_deassert)
+$info("Pready is low when Psel goes low");
+ else
+$error("Pready is not low when Psel is low");
+
+	   ...
